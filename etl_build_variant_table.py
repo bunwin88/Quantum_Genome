@@ -6,9 +6,9 @@ authors:
   - family-names: "Unwin"
     given-names: "Bill"
     alias: "William F. Unwin"
-    email: "YOUR_EMAIL@example.com"
-repository-code: "https://github.com/YOUR_GITHUB_USERNAME/quantumgenome-eds-discovery-engine"
-url: "https://github.com/YOUR_GITHUB_USERNAME/quantumgenome-eds-discovery-engine"
+    email: "bunwin88@gmail.com"
+repository-code: "https://github.com/bunwin88/quantumgenome-eds-discovery-engine"
+url: "https://github.com/bunwin88/quantumgenome-eds-discovery-engine"
 abstract: >
   QuantumGenome EDS Discovery Engine is a Jetson-first genomics discovery
   pipeline for EDS/collagen variant interaction mapping, QAOA-based low-energy
@@ -32,9 +32,9 @@ preferred-citation:
     - family-names: "Unwin"
       given-names: "Bill"
       alias: "William F. Unwin"
-      email: "YOUR_EMAIL@example.com"
+      email: "bunwin88@gmail.com"
   title: "QuantumGenome EDS Discovery Engine"
   version: "v1.0"
   date-released: "2026-05-30"
-  repository-code: "https://github.com/YOUR_GITHUB_USERNAME/quantumgenome-eds-discovery-engine"
-  url: "https://github.com/YOUR_GITHUB_USERNAME/quantumgenome-eds-discovery-engine"
+  repository-code: "https://github.com/bunwin88/quantumgenome-eds-discovery-engine"
+  url: "https://github.com/bunwin88/quantumgenome-eds-discovery-engine"

@@ -56,6 +56,10 @@ Most genomics pipelines score variants one at a time. This project is designed t
 6. Rank low-energy disease-loaded configurations
 7. Promote novel candidates and epistasis hypotheses for deeper review
 
-## Public / Private Boundary
+## Rights and Usage
 
-This public repository is a sanitized project showcase. It does not include private credentials, internal-only operating notes, or confidential trade-secret material.
+This repository is publicly visible for portfolio and review purposes only.
+All rights are reserved by the author unless explicit written permission is granted.
+No open-source license is provided for this repository.
+
+Copyright (c) 2026 William Unwin. All rights reserved.

@@ -1,0 +1,12 @@
+numpy
+scipy
+pandas
+pyarrow
+requests
+vcfpy
+qiskit
+qiskit-aer
+qiskit-ibm-runtime
+tqdm
+scikit-learn
+python-docx

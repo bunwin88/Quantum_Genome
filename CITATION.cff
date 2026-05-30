@@ -1,0 +1,23 @@
+# IBM Placeholder Public Repo Notes
+
+This public repo includes the IBM-capable `quantum_model_builder.py` with placeholder settings only.
+
+## To run IBM Quantum yourself
+1. Copy `config_template.py` to `config.py`
+2. Fill in your own:
+   - `IBM_TOKEN`
+   - `IBM_INSTANCE`
+   - `IBM_BACKEND`
+3. Keep `config.py` out of Git
+4. Run:
+   - `python3 setup_quantum_genome.py`
+   - `python3 etl_download.py`
+   - `python3 etl_build_variant_table.py`
+   - `python3 filter_panels.py`
+   - `python3 quantum_model_builder.py`
+5. Set `USE_IBM = True` in `quantum_model_builder.py` when you want to submit to IBM
+
+## Important
+- This repo does not contain real credentials
+- This repo is public for showcase / review purposes
+- All rights are reserved

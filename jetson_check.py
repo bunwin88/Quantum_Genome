@@ -1,27 +1,22 @@
-import sys, os, subprocess, importlib, platform, shutil
+import requests
+from pathlib import Path
+from config_template import CLINVAR_DIR, GENCODE_DIR, PHARMGKB_DIR
 
-def run(cmd, default="unknown"):
-    try:
-        r = subprocess.run(cmd, shell=True, capture_output=True, text=True, timeout=10)
-        return r.stdout.strip() or default
-    except Exception:
-        return default
-
-def check_import(module):
-    try:
-        mod = importlib.import_module(module)
-        return True, str(getattr(mod, "__version__", "installed"))
-    except ImportError as e:
-        return False, str(e)
+def download_file(url: str, dest: Path):
+    if dest.exists():
+        print(f"[SKIP] {dest.name}")
+        return
+    with requests.get(url, stream=True, timeout=120) as r:
+        r.raise_for_status()
+        with open(dest, "wb") as f:
+            for chunk in r.iter_content(chunk_size=1024 * 1024):
+                if chunk:
+                    f.write(chunk)
+    print(f"[DONE] {dest}")
 
 def main():
-    print(f"Architecture: {platform.machine()}")
-    print(f"Python: {sys.version.split()[0]}")
-    print(f"JetPack: {run('dpkg -l | grep -i jetpack | awk \'{print $3}\' | head -1')}")
-    print(f"CUDA: {run('nvcc --version 2>/dev/null | grep release | awk \'{print $6}\' | tr -d \,')}")
-    for pkg in ["numpy", "scipy", "pandas", "pyarrow", "requests", "vcfpy", "qiskit", "qiskit_aer", "qiskit_ibm_runtime"]:
-        ok, ver = check_import(pkg)
-        print(f"{pkg}: {'OK ' + ver if ok else 'MISSING'}")
+    download_file("https://ftp.ncbi.nlm.nih.gov/pub/clinvar/vcf_GRCh38/clinvar.vcf.gz", CLINVAR_DIR / "clinvar_GRCh38.vcf.gz")
+    download_file("https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_49/gencode.v49.basic.annotation.gtf.gz", GENCODE_DIR / "gencode.v49.basic.annotation.gtf.gz")
 
 if __name__ == "__main__":
     main()
